@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spam Detector</title>
+<h1>Word Detection </h1>
+<script>
+function detectIt(text,word){
+text=text.toLowerCase();
+word=word.toLowerCase();
+var verdict=text.indexOf(word);
+if(verdict<0) return false;
+return true;
+}
+</script>
+</head>
+<body>
+<script>
+var text=window.prompt("Enter the text to be scanned");
+var word=window.prompt("Enter the text spam word","deal");
+var result=detectIt(text,word);
+if(result)
+window.alert("Spam was found ." );
+else window.alert("All OK" );
+</script>
+</body>
+</html>

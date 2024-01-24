@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Be Wise</title>
+<script>
+function todaysQuote()
+{var message="";
+
+var day=new Date().getDay();
+switch(day){
+  case 0:
+  message="Sunday,a great day to Start!";
+  break;
+  case 1:
+  message="Monday,a great day to Continue!";
+  break;
+  case 2:
+  message="Tuesday,an awesome day for a Run!";
+  break;
+   case 3:
+  message="Wednesday,time to Paint !";
+  break; 
+  case 4:
+  message="Thursday,Gym is calling!";
+  break; 
+  case 5:
+  message="Friday ,have some Vodka!";
+  break;
+  case 6:
+  message="Saturday,when food is great!";
+  break;
+}
+document.getElementById("div1").innerHTML="<p>"+message+"</p>";
+}
+</script>
+</head>
+<body>
+
+<div id="div1">hell</div>
+<script>
+todaysQuote();</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Capitalizing First Letter</title>
+<script>
+function Capital(word)
+{
+  var first=word.substr(0,1);
+  first=first.toUpperCase();
+  return first+word.substr(1);
+}
+</script>
+</head>
+<body>
+<script>
+var word=window.prompt("What's the word?");
+var cap=Capital(word);
+document.write("<h2>The word with first letter capitalized is: "+cap+"</h2>");
+</script>
+</body>
+</html>
