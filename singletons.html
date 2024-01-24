@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Singleton Creation</title>
+<script>
+myTodaysLesson=new Object();
+myTodaysLesson.page=128;
+myTodaysLesson.info="Object Oriented Programming";
+myTodaysLesson.hours=2;
+function show(){
+document.getElementById("d1").innerHTML="<p>The session studied today is called "+this.info+" on page "+this.page+" and i studied it for "+this.hours+ " hours.</p>";
+}
+myTodaysLesson.docs=show;
+myTodaysLesson.anonymous=function(){alert("This was an anonymous function");}
+
+</script>
+</head>
+<body>
+<div id="d1">Hello</div>
+<input type="button" value="First Object Info"
+onclick="myTodaysLesson.docs()" />
+<input type="button" value="Anonymous Function"
+onclick="myTodaysLesson.anonymous()" />
+</body>
+</html>
