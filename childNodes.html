@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<hmtl>
+<head>
+<title>A simple use of child-Nodes list </title>
+<script>
+function nNodes(id)
+{
+var childNodes=document.getElementById(id).childNodes;
+var count=0;
+for(var i=0;i<childNodes.length;i++){
+count++;}
+
+window.alert("This element contains "+count+ " child nodes.");
+}
+window.onload=childNodes;</script>
+</head>
+<body>
+<p>Книги </p>
+<ol id="list"><li>Мастер и Маргарита </li><li>Идиот</li><li>Русская грамматика</li><li>Книги моей библиотеки</li></ol>
+//<script>nNodes("list");</script>
+</body>
+</hmtl>

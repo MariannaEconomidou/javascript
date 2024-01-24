@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>How many Nodes?</title>
+<script>
+function getNumber()
+{
+var answer=window.prompt("Here's a list of the different elements contained in this page:1)html 2)head 3)script 4)body 5)p 6)button.Write the name of the element to get its number of appearances"); 
+var collected=document.getElementsByTagName(answer);
+var count=collected.length;
+window.alert("There are "+count +" appearances of element ""+answer+"".");
+}
+</script>
+</head>
+<body>
+<p>Simple Node Counter</p>
+<button onclick=getNumber()>See Again!</button>
+<script>
+getNumber();
+</script>
+</body>
+
+</html>
