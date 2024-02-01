@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Eloquent JavaScript</title>
+<script>
+const range=function(start,end){
+res=[];
+if((typeof start)=='number' && (typeof end)=='number'){
+if(start<end){
+for(i=start;i<=end;i++){
+res.push(i);}
+}
+else
+{
+for(i=end;i<=start;i++)
+{
+res.push(i);}
+}
+return res;}
+else return undefined;
+};
+
+const sum=function(array){
+let su=0;
+for(let num of array){
+su+=num;}
+return su;
+};
+
+const rangeStep=function(start,end,step){
+if(step===""){ step=1;}
+res=[];
+if(step<0){
+if(start<end)
+{res=undefined;}
+else if(start>=end)
+{
+for(i=start;i>=end;i+=step)
+{res.push(i);}
+}
+}
+else if(step>0){
+if(start<end)
+{for(i=start;i<=end;i+=step)
+{res.push(i);}
+}
+else if(start>=end)
+{
+res=undefined;
+}
+}
+else{res=undefined};
+return res;}
+
+
+</script>
+</head>
+<body>
+<p><ol>Exercises
+<li>Exercise1.
+Write a range function that takes two arguments, start and end, and returns
+an array containing all the numbers from start up to (and including) end.
+</li>
+<li>
+Exercise2.Write a sum function that takes an array of numbers and returns the
+sum of these numbers. Run the example program and see whether it does
+indeed return 55</li>
+
+<li>Exercise3.As a bonus assignment, modify your range function to take an optional third
+argument that indicates the “step” value used when building the array. If no
+step is given, the elements go up by increments of one, corresponding to the
+old behavior. The function call range(1, 10, 2) should return [1, 3, 5, 7,
+9]. Make sure it also works with negative step values so that range(5, 2, -1)
+produces [5, 4, 3, 2].</li>
+
+
+</ol>
+
+
+
+<button id="ex1" onclick='let a=parseInt(window.prompt("Give a number"));
+let b=parseInt(window.prompt("Give a larger number"));
+window.alert(range(a,b));' >Exercise 1</button>
+<button id="ex2" onclick='let a=parseInt(window.prompt("Give a number"));
+let b=parseInt(window.prompt("Give a larger number"));
+window.alert(sum(range(a,b)));' >Exercise 2</button>
+<button id="ex3" onclick='let a=parseInt(window.prompt("Give a number"));
+let b=parseInt(window.prompt("Give a larger number"));
+let c=parseInt(window.prompt("Give the step"));
+window.alert(rangeStep(a,b,c));' >Exercise3</button>
+</p>
+</body>
+</html>
