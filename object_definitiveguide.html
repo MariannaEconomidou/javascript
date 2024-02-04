@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body><script>
+//Guard against modification with Object.create()
+ //creation of objects with Object.create()
+   let original={name:"Marianna",kind:"ultra smart",};
+ //creation of object with the specific prototype
+   let daughter=Object.create(original);
+ //changes to the object won't affect the prototyte
+  let time=function(ob){ob.name="Marianna\'s kid";};
+  time(daughter);
+  //print results
+  console.log("Original Object "+original.name);
+  console.log("Modified Object "+daughter.name);
+
+
+    </script></body>
+</html>
