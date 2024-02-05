@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            //properties my code add to objects are enumerable
+            //built in properties are not
+            let prot={x:5,g:6,};
+            let dec=Object.create(prot);
+            dec.l=8;
+            for(let en in dec){console.log(en);}
+            //check for own properties with object.hasOwnProperty(property)
+            for(let en in dec){console.log(dec.hasOwnProperty(en));}
+        </script>
+    </body>
+</html>
