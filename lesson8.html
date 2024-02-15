@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>Objects</head>
+    <body>
+        <script>
+          let object1={type:"literal",};
+          let object2={type:"literal","string as key":"value"};
+          console.log(object1);
+          console.log(object2);
+          
+          document.write(object1+"<br>");
+          document.write(object2+"<br>");  
+          let a=5;
+          let obj={a};
+          document.write(obj+"<br>");
+          console.log(obj);
+          delete object2.type;
+          console.log(object2);
+         let Beth={firstname:"Deth",
+             lastname:"Datton",
+             fullname(){return `${this.firstname} and ${this.lastname}`;}
+             }
+           console.log(Beth.fullname()+"*****");  
+           Beth.father="joe";
+           for(let property in skh){
+            console.log(property,Beth[property]);
+           };
+           console.log(Object.keys(Beth));
+           console.log(Object.values(Beth));
+           console.log(Object.entries(Beth));
+           console.log("****************");
+           Beth2={...Beth};
+           Beth2.lastname="Doe";
+           Beth2.father="Alec";
+           console.log(">>> "+Object.entries(Beth2));
+           console.log(">>> "+Object.entries(Beth));
+           Beth3={...Beth2,...Beth};
+           console.log(">>> "+Object.entries(Beth3));
+        </script>
+        <script>
+            let billingDetails={
+                fullname:"Mecon",
+                addressLine1:"ilu",
+                addressLine2:"uned",
+                addressLine3:"ufined",
+                print(){
+                    for(det of Object.keys(this))
+                    {console.log(this[det]);};
+                }
+            }
+            billingDetails.print();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        Object Prototypes
+    </head>
+    <body>
+        <script>
+            let fly={canfly:true,};
+            let ironMan={heroName:"Stark",}; 
+            Object.setPrototypeOf(ironMan,fly);
+            let batman=JSON.parse(JSON.stringify(ironMan));
+            batman.heroName="Wayne";
+            Object.setPrototypeOf(batman,fly);
+            batman.canfly=false;
+            
+            console.log(batman);
+            console.log(fly);
+
+        </script>
+        <script>
+            function Superhero(name,strength)
+            {this.name=name;this.strength=strength;a="4";}
+            let me=new Superhero("Marianna","canRunlikeTheWindToBeFree");
+            console.log(me);
+           
+        </script>
+        <script>
+             function Dog(name,kind,weight,mood){
+                this.name=name;
+                this.kind=kind;
+                this.weight=weight;
+                this.mood=mood>=0&&mood<=10?mood:5;
+                this.eat=function(){this.mood=this.mood+1;};
+                this.walk=function(){this.mood=this.mood+1;};
+               this.bark=function(){this.mood>=5?console.log("woof woof"):console.log("woof");}
+            }
+            let piko=new Dog("piko","Terrier",10);
+            let lassie=new Dog("Lassie","Colley",30);
+            Dog.prototype.shit=function(){console.log("finally");};
+            console.log(piko);
+            piko.shit();
+
+        </script>
+    </body>
+</html>
