@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>Zoo</head>
+    <body>
+        <script>
+          function Animal(weight,height){
+        this.height=height;
+        this.weight=weight;
+          }  
+          function Horse(weight,height,color,tail){
+            Animal.call(this,weight,height),
+            this.color=color,
+            this.tail=tail
+        }
+       Horse.prototype=new Animal();
+       Horse.prototype.constructor=Horse;
+       Horse.prototype.toString=function(){return `${this.color}`;}
+
+
+
+        function Dog(weight,height,volume){
+           
+            Animal.call(this,weight,height),
+            this.volume=volume
+        }
+        Dog.prototype=new Animal();
+        Dog.prototype.constructor=Dog;
+        Dog.prototype.bark=function(){console.log("bark");}
+        
+
+
+       function Doberman(volume,weight,height){
+        Dog.call(this,volume,weight,height)
+       }
+       Doberman.prototype=new Dog();
+       Doberman.prototype.constructor=Doberman;
+       Doberman.prototype.run=function(){"I run now"};
+
+       function Bulldog(volume,weight,height,ear)
+       {
+        Dog.call(this,volume,weight,height),
+        this.ears=ear
+       }
+       Bulldog.prototype=new Dog();
+       Bulldog.prototype.constructor=Bulldog;
+       Bulldog.prototype.sleep=function(){console.log("Snor snor");}
+       let sag=new Doberman(50,25,100);
+       let dolly=new Horse(100,170,"brown",100);
+       let chris=new Bulldog(10,40,30,40);
+       console.log(dolly);
+       //sag.bark();
+      // sag.run();
+      /* sag.bark();
+       chris.bark();
+       chris.sleep();
+       chris.bark();*/
+
+
+        </script>
+    </body>
+</html>
