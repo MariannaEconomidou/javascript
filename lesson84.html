@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    Classes with Private Properties//
+    Lines and Points
+    </head>
+    <body>
+        <script>
+         class Point{
+            #x;
+            #y;
+            constructor(x,y){
+                this.#x=x;
+                this.#y=y;
+            }
+            get x(){return this.#x;}
+            get y(){return this.#y;}
+        }
+        class Line{
+            constructor(p1,p2){
+                this.p1=p1;
+                this.p2=p2;
+            }
+            #length;
+            get length()
+            {let ls=(p1.x-p2.x)*(p1.x-p2.x)+(p1.y-p2.y)*(p1.y-p2.y);
+            return Math.sqrt(ls);}
+        }
+        let p1=new Point(1,1);
+        let p2=new Point(4,5);
+        let line=new Line(p1,p2);
+        console.log(line.length);
+       class Dog{
+        #name;
+        #kind;
+        #weight;
+        #mood;
+        constructor(name,kind,weight=10,mood=5){
+            this.#kind=kind;
+            this.#mood=mood;
+            this.#name=name;
+            this.#weight=weight;
+        }
+        eat(){this.#mood=this.#mood+1;}
+        bark(){
+            if(this.#mood>5)
+            {console.log("Woof woof woof");
+            }else{console.log("woof");}}
+       walk(){this.#mood=this.#mood+1;}
+       get mood(){return this.#mood;}
+        }
+        let piko=new Dog("Piko","Terrier",10);
+        let lassie=new Dog("Lassie","Colley",30);
+        piko.bark();
+        piko.walk();
+        console.log(piko.mood);
+        piko.bark();
+      class Circle{
+        #c;
+        #x;
+        #y;
+        #metric;
+        constructor(c,metric){
+        this.#metric=metric;
+        this.#c=c;
+        Object.defineProperty(this,'perimeterIn',{value:2*Math.Pi*this.#c,writable:false})
+        }
+        get c(){return this.#c;}
+        set c(c){this.#c=c;}
+        static inToCm(inc){return inc*2.54;}
+        static CmToIn(cm){return cm/2.54;}
+        
+      }
+
+        </script>
+    </body>
+</html>
