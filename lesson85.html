@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        Inheritence in new JavaScript
+    </head>
+    <body>
+        <script>
+            //exercise 0
+     class Cow{
+        mood;
+        weight;
+        constructor(weight,mood){this.mood=mood;this.weight=weight;}
+        expression(){return "moo"}; 
+    }
+    class LongHorn extends Cow{
+        lenght;
+        constructor(weight,mood,length){
+            this.length=length;
+            super(weight,mood);}
+    }
+     </script>
+     <script>
+        //exercise1
+        
+        class Order{
+            constructor(date,payment)
+            {this.date=date;
+            this.payment=payment;}
+            toString(){return `on ${this.date} -order of- ${this.payment} $`;}
+        }
+        class Customer{
+            #name;
+            #address;
+            #orders=[];
+            constructor(name,address){
+                this.#name=name;
+                this.#address=address;
+                
+            }
+            placeOrder(order){this.#orders.push(order);}
+            toString(){
+                let info=`The customer named ${this.#name} lives at ${this.#address} and has ordered: \n`;
+                for(let i=0;i<this.#orders.length;i++)
+                {info+=`${i+1}: ${this.#orders[i]} \n`;}
+                return info;
+            }
+        }
+         let cust=new Customer("E","f5");
+         let ord1=new Order("05/05/15",50);
+         cust.placeOrder(ord1);
+         let ord2=new Order("08/04/22",550);
+         cust.placeOrder(ord2);
+         let ord3=new Order("03/01/05",77);
+         cust.placeOrder(ord3);
+         console.log(cust.toString());
+     </script>
+     <script>
+        //exercise 2
+        class Credit{
+            #card_num;
+            #expDate;
+            constructor(card,date){
+                this.#card_num=card;
+                this.#expDate=date;
+            }
+
+        }
+        class Payment extends Credit{
+            constructor(card,date,checkbook,bankcode){
+                super(card,date);
+                this.checkbook=checkbook;
+                this.bankcode=bankcode;}
+        }
+     </script>
+    </body>
+</html>
