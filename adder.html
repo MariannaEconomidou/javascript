@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>Adder with use of Factory Functions</head>
+    <body>
+        <script>
+            function adder(num){
+                return function(x){
+                    num=num+x;
+                    return num;
+                };
+            }
+            let add5=adder(5);
+            console.log(add5(2));
+            console.log(add5(10));
+           </script>
+    </body>
+</html>

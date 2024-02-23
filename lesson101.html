@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>Inner Functions,Factory Functions
+        Scopes and Execution Environments
+    </head>
+    <body>
+        <script>
+        function polyonimial(a,b,c){
+            function poly(x){
+                return a*x**2+b*x+c;
+            }
+            return poly;
+        }
+       let fx=polyonimial(5,6,2);
+       console.log(fx(5));
+       </script>
+
+        </body>
+</html>
