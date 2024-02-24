@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    Truth is I thought it mattered,music mattered,but does it?Bullocks.
+    No compared to how people mattered.
+    </head>
+    <body>
+    <script>
+
+   function atomic(age,name){
+    let _age=age;
+    let _name=name;//things inside closure .only the atom()function will afterall have access to age,name
+    function person(){
+        let atom={
+        getName(){return _name;},
+        setName(nam){_name=nam;},
+        birthday(){_age+=1;},
+        toString(){return `This person called ${_name} is of age ${_age}.`;}
+         };
+        return atom;
+    } 
+    return person();
+    }
+
+    let face=atomic(17,"Blondie");
+    console.log(""+face);
+    face.birthday();
+    face.birthday();
+    console.log(""+face);
+
+   </script>
+    </body>
+</html>
