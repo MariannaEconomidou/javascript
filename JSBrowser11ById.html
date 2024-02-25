@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>Toggle -Choose Element by ID
+        <style>
+              .box {
+            border: 2px solid black; /* Border around the box */
+            padding: 20px; /* Padding inside the box */
+            margin: 20px; /* Margin around the box */
+            width: 200px; /* Width of the box */
+            height: 100px; /* Height of the box */
+        }
+        </style>
+    </head>
+    <body>
+        <div class="box" id="div">Hello</div>
+        <button id="button">Change Color</button>
+        <script>
+            function changeColor(){
+                let div=document.getElementById("div");
+                if(div.style.backgroundColor==="red")
+                 div.style.backgroundColor="blue";
+                else
+                 div.style.backgroundColor="red";
+            }
+            let button=document.getElementById("button");
+            button.addEventListener("click",changeColor);
+        </script>
+    </body>
+</html>
