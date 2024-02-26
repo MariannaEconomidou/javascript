@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{box-sizing:border-box;}
+            /* Container style */
+        .container {
+           width:700px;
+           height: 150px;
+           display:flex;
+            justify-content:space-around;
+            align-items: center;
+            margin:20px;
+            text-align: center;
+        }
+
+        /* Box style */
+        .box {
+            border: 2px solid black;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        /* Div style */
+        div {
+            width: 100px;
+            height: 100px;
+            justify-content: center;
+            border:2px black solid; /* Default font for .div */
+        }
+
+        /* Red style */
+        .red {
+            background-color: rgb(200, 17, 65);
+            color: rgb(35, 226, 210); /* Text color for red */
+            font-family: Verdana, Geneva, sans-serif; /* Font for red */
+        }
+
+        /* Blue style */
+        .blue {
+            background-color: rgb(36, 36, 121);
+            color: yellow; /* Text color for blue */
+            font-family: "Courier New", Courier, monospace; /* Font for blue */
+        }
+       
+    </style>
+    </head>
+    <body>
+         <div class="container">
+            <div class="even red">w </div>
+            <div class="odd red"> h</div>
+            <div class="even blue"> a</div>
+            <div class="odd blue">t </div>
+         </div>
+         <button id="button">Click</button>
+         <script>
+            function changeColorOfClassElements(className,color){
+                elements=document.getElementsByClassName(className);
+                for(let element of elements){
+                    element.style.backgroundColor=color;
+                }
+            }
+            let button=document.getElementById("button");
+            button.addEventListener("click",()=>{changeColorOfClassElements("odd","pink");
+            changeColorOfClassElements("even","teal");});
+         </script>
+    </body>
+</html>
